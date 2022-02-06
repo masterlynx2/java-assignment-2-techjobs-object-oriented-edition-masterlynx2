@@ -16,7 +16,7 @@ public class Job {
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
-    public Job(){
+    public Job() {
         id = nextId;
         nextId++;
     }
@@ -93,4 +93,54 @@ public class Job {
     public int getId() {
         return id;
     }
-}
+
+//    public String toString() {
+//        if (this.getName().equals("")) {
+//            this.name += "Data not available";
+//        } else if(this.getEmployer().equals("")) {
+//               this.employer += "Data not available";
+//        } else if(this.location== null) {
+//            return "Data not available";
+//        } else if(this.positionType== null) {
+//            return "Data not available";
+//        } else if(this.coreCompetency== null) {
+//            return "Data not available";
+//            }else{ String result = " ID:  _______" + this.getId() + "\n" +
+//                    " Name:  _______" + this.getName() + "\n" +
+//                    " Employer:  _______" + this.getEmployer() + "\n" +
+//                    " Location:  _______" + this.getLocation() + "\n" +
+//                    " PositionType:  _______" + this.getPositionType() + "\n" +
+//                    " CoreCompetency:  _______" + this.getCoreCompetency() + "\n";
+//            return result;
+//
+//        }
+    @Override
+     public String toString(){
+         String output= "";
+
+          output = String.format("\nID: %d\n" +
+                  "Name: %s\n" +
+                  "Employer: %s\n" +
+                  "Location: %s\n" +
+                  "PositionType: %s\n" +
+                  "CoreCompetency: %s\n",id, name, employer, location,positionType,coreCompetency);
+
+        if (this.getName().equals("")) {
+            return "Data not available";
+        } else if(this.getEmployer().equals(""))  {
+            return "Data not available";
+        }else if (this.getLocation().equals("")){
+            return "Data not available";
+        }else if (this.getPositionType().equals("")){
+            return "Data not available";
+        }else if (this.getCoreCompetency().equals("")){
+            return  "Data not available";
+        }
+
+          return output;
+
+
+    }
+
+    }
+//}
