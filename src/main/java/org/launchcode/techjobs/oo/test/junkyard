@@ -1,0 +1,8 @@
+   public void testtoString() {
+            String result = " ID:  _______" + tester3.getId() + "\n"+
+            " ID:  _______" + tester3.getName() + "\n"+
+            " ID:  _______" + tester3.getEmployer() + "\n"+
+            " ID:  _______" + tester3.getLocation() + "\n"+
+            " ID:  _______" + tester3.getPositionType() + "\n"+
+            " ID:  _______" + tester3.getCoreCompetency() + "\n";
+//        }

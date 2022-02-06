@@ -118,24 +118,41 @@ public class Job {
      public String toString(){
          String output= "";
 
-          output = String.format("\nID: %d\n" +
+        if (this.getName().equals("") && this.getEmployer().getValue().equals("")
+                && this.getLocation().getValue().equals("")&& this.getPositionType().getValue().equals("")&&this.getCoreCompetency().getValue().equals("")){
+           return "OOPS! This job does not seem to exist.";
+        }
+
+        if (this.getName().equals("")) {
+           setName("Data not available");
+        }  if(this.getEmployer().getValue().equals(""))  {
+            setEmployer( new Employer( "Data not available"));
+        } if (this.getLocation().getValue().equals("")){
+            setLocation(new Location("Data not available"));
+        }if (this.getPositionType().getValue().equals("")){
+            setPositionType(new PositionType("Data not available"));
+        } if (this.getCoreCompetency().getValue().equals("")){
+            setCoreCompetency(new CoreCompetency("Data not available"));
+        }
+
+          output = String.format("\n ID: %d\n" +
                   "Name: %s\n" +
                   "Employer: %s\n" +
                   "Location: %s\n" +
                   "PositionType: %s\n" +
-                  "CoreCompetency: %s\n",id, name, employer, location,positionType,coreCompetency);
+                  "CoreCompetency: %s\n",id, name, employer.getValue(), location.getValue(),positionType.getValue(),coreCompetency.getValue());
 
-        if (this.getName().equals("")) {
-            return "Data not available";
-        } else if(this.getEmployer().equals(""))  {
-            return "Data not available";
-        }else if (this.getLocation().equals("")){
-            return "Data not available";
-        }else if (this.getPositionType().equals("")){
-            return "Data not available";
-        }else if (this.getCoreCompetency().equals("")){
-            return  "Data not available";
-        }
+//        if (this.getName().equals("")) {
+//            output += '\n' + "Name: Data not available";
+//        } else if(this.getEmployer().equals(""))  {
+//            output += '\n' + "Employer: Data not available";
+//        }else if (this.getLocation().equals("")){
+//            output += '\n' + "Location: Data not available";
+//        }else if (this.getPositionType().equals("")){
+//            output += '\n' + "PositionType: Data not available";
+//        }else if (this.getCoreCompetency().equals("")){
+//            output += '\n' +  "CoreCompetency: Data not available";
+//        }
 
           return output;
 
